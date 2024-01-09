@@ -11,10 +11,11 @@ permissions:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: windows-latest
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macOS-latest]
+        python-version: ["3.9", "3.10", "3.11"]
         
 
     steps:
