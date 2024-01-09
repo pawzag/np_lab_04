@@ -12,7 +12,11 @@ permissions:
 jobs:
   build:
 
+<<<<<<< HEAD
     runs-on: ubuntu-latest
+=======
+    runs-on: ubuntu-latest, windows-latest, macos-latest
+>>>>>>> main
     strategy:
       matrix:
         python-version: ["3.9", "3.10", "3.11",]
