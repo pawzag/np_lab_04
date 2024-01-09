@@ -4,7 +4,7 @@ name: check_python_version
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "check_python_version" ]
   pull_request:
     branches: [ "main" ]
 
