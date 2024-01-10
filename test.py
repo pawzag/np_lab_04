@@ -23,11 +23,11 @@ class TestMathFunctions(unittest.TestCase):
 
 
     def test_divide_numbers(self):
-    self.assertEqual(divide_numbers(6, 3), 2.0)
-    self.assertEqual(divide_numbers(5, 2), 2.5)
-    self.assertEqual(divide_numbers(0, 5), 0.0)
-    with self.assertRaises(ValueError):
-        divide_numbers(5, 0)
+        self.assertEqual(divide_numbers(6, 3), 2.0)
+        self.assertEqual(divide_numbers(5, 2), 2.5)
+        self.assertEqual(divide_numbers(0, 5), 0.0)
+        with self.assertRaises(ValueError):
+            divide_numbers(5, 0)
 
 if __name__ == "__main__":
     unittest.main()
