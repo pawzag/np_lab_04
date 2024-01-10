@@ -51,10 +51,9 @@ jobs:
       run: |
         python3 -m pip install --upgrade pip
 
-    - name: Instalacja flake i unittest
+    - name: Instalacja flake
       run: |
         pip3 install flake8
-        pip3 install unittest
 
     - name: Wyświetlanie wersji Pythona
       run: python3 --version
