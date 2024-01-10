@@ -10,16 +10,12 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  build_windows:
 
-    runs-on: ${{ matrix.os }}
+    runs-on: windows-latest
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest]
         python-version: ["3.9", "3.10", "3.11"]
-      exclude:
-        - os: ubuntu-latest
-          python-version: "3.10"
 
     steps:
     - uses: actions/checkout@v3
@@ -28,16 +24,44 @@ jobs:
       run: |
         python -m pip install --upgrade pip
 
-    - name: instalacja flake'a i unittest
+    - name: Instalacja flake i unittest
       run: |
         pip install flake8
         pip install unittest
 
-    - name: wyswietlanie wersji
+    - name: Wyświetlanie wersji Pythona
       run: python --version
 
-    - name: uruchomienie flake'a
+    - name: Uruchomienie flake8
       run: flake8
 
-    - name: uruchomienie unittest
+    - name: Uruchomienie unittest
       run: python -m unittest discover
+
+  build_ubuntu:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Aktualizacja pip
+      run: |
+        python3 -m pip install --upgrade pip
+
+    - name: Instalacja flake i unittest
+      run: |
+        pip3 install flake8
+        pip3 install unittest
+
+    - name: Wyświetlanie wersji Pythona
+      run: python3 --version
+
+    - name: Uruchomienie flake8
+      run: flake8
+
+    - name: Uruchomienie unittest
+      run: python3 -m unittest discover
