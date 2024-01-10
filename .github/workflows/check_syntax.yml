@@ -27,7 +27,6 @@ jobs:
     - name: Instalacja flake i unittest
       run: |
         pip install flake8
-        pip install unittest
 
     - name: Wyświetlanie wersji Pythona
       run: python --version
