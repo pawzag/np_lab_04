@@ -1,6 +1,7 @@
 import unittest
 from app import add_numbers, subtract_numbers, multiply_numbers, divide_numbers
 
+
 class TestMathFunctions(unittest.TestCase):
     def test_add_numbers(self):
         self.assertEqual(add_numbers(5, 3), 8)
@@ -23,6 +24,7 @@ class TestMathFunctions(unittest.TestCase):
         self.assertEqual(divide_numbers(0, 5), 0.0)
         with self.assertRaises(ValueError):
             divide_numbers(5, 0)
+
 
 if __name__ == "__main__":
     unittest.main()
